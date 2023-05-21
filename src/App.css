@@ -1,3 +1,7 @@
+body {
+  background-color: gainsboro;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.content-container {
+  flex-grow: 1;
+  min-height: 80vh;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  background-color: white;
 }
