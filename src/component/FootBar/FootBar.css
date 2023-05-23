@@ -1,6 +1,10 @@
 .footbar {
     background-color: dimgrey;
     min-height: 80px;
-    height: 15vh;
     width: 100%;
+}
+
+h2 {
+    padding: 10px; 
+    margin-top: 0;
 }
