@@ -18,6 +18,10 @@
     text-align: left;
 }
 
+.home-product-bar-more {
+    font-size: 10px;
+}
+
 .home-product-bar-more:hover {
     cursor: pointer;
     text-decoration: underline;

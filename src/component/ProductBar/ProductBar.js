@@ -3,31 +3,27 @@ import { useNavigate } from "react-router-dom";
 import './ProductBar.css'
 
 const ProductBar = (props) => {
-    const navigate = useNavigate();
+  console.log(props.products); 
 
-    function handleClick() {
-        navigate("/another-page");
-    }
+  const navigate = useNavigate();
 
-    return (
-        <div className="home-product-bar">
-          <div className="home-product-bar-head">
-            <div className="home-product-bar-title">{props.section}</div>
-            <div className="home-product-bar-more" onClick={handleClick}>Explore all details</div>
-          </div>
-          <div className="home-product-bar-container">
-            <ProductItem title="test item" price="???" image="https://img0.baidu.com/it/u=1442536931,57766296&fm=253&fmt=auto&app=138&f=JPG?w=225&h=225" />
-            <ProductItem title="test item" price="???" image="https://img0.baidu.com/it/u=1442536931,57766296&fm=253&fmt=auto&app=138&f=JPG?w=225&h=225" />
-            <ProductItem title="test item" price="???" image="https://img0.baidu.com/it/u=1442536931,57766296&fm=253&fmt=auto&app=138&f=JPG?w=225&h=225" />
-            <ProductItem title="test item" price="???" image="https://img0.baidu.com/it/u=1442536931,57766296&fm=253&fmt=auto&app=138&f=JPG?w=225&h=225" />
-            <ProductItem title="test item" price="???" image="https://img0.baidu.com/it/u=1442536931,57766296&fm=253&fmt=auto&app=138&f=JPG?w=225&h=225" />
-            <ProductItem title="test item" price="???" image="https://img0.baidu.com/it/u=1442536931,57766296&fm=253&fmt=auto&app=138&f=JPG?w=225&h=225" />
-            <ProductItem title="test item" price="???" image="https://img0.baidu.com/it/u=1442536931,57766296&fm=253&fmt=auto&app=138&f=JPG?w=225&h=225" />
-            <ProductItem title="test item" price="???" image="https://img0.baidu.com/it/u=1442536931,57766296&fm=253&fmt=auto&app=138&f=JPG?w=225&h=225" />
-            <ProductItem title="test item" price="???" image="https://img0.baidu.com/it/u=1442536931,57766296&fm=253&fmt=auto&app=138&f=JPG?w=225&h=225" />
-            <ProductItem title="test item" price="???" image="https://img0.baidu.com/it/u=1442536931,57766296&fm=253&fmt=auto&app=138&f=JPG?w=225&h=225" />
-          </div>
-        </div>
+  function handleClick() {
+    navigate("/another-page");
+  }
+
+  return (
+    <div className="home-product-bar">
+      <div className="home-product-bar-head">
+        <div className="home-product-bar-title">{props.section}</div>
+        <div className="home-product-bar-more" onClick={handleClick}>Explore all details</div>
+      </div>
+
+      <div className="home-product-bar-container">
+        { props.products.map(product => (
+          <ProductItem id={product.id} title={product.title} price={product.price} image={product.image} section={props.section}/>
+        ))}
+      </div>
+    </div>
     )
 }
 
