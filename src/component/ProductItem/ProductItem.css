@@ -20,6 +20,10 @@
     height: auto;
 }
 
+.home-item-title {
+    font-size: 10px;
+}
+
 .home-item-price {
     margin-top: 10px;
     color: orangered;
