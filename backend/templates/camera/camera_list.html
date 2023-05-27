@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>camera_list</title>
+  </head>
+
+  <body>
+    {% load static %}
+    <table style="font-size: 10px;">
+      {% for camera in cameras %}   
+      <tr>
+        <th>{{ camera.id }}</th>
+        <th>{{ camera.model_name }}</th>
+        <th>{{ camera.model_number }}</th>
+        <th>{{ camera.manufacturer }}</th>
+        <th>{{ camera.retail_price }}</th>
+        <th>{{ camera.num_in_stock }}</th>
+        <th>{{ camera.release_date }}</th>
+        <th>{{ camera.img }}</th>
+      </tr> 
+      {% endfor %} 
+    </table>
+  </body>
+</html>
