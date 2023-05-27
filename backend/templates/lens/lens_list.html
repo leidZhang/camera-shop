@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>lens_list</title>
+  </head>
+
+  <body>
+    {% load static %}
+    <table style="font-size: 10px;">
+      <!-- table header -->
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>model_name</th>
+          <th>model_number</th>
+          <th>manufacturer</th>
+          <th>retail_price</th>
+          <th>num_in_stock</th>
+          <th>img</th>
+        </tr>
+      </thead>
+      <!-- table data -->
+      <tbody>
+        {% for lens in lenses %}   
+        <tr>
+          <th>{{ lens.id }}</th>
+          <th>{{ lens.model_name }}</th>
+          <th>{{ lens.model_number }}</th>
+          <th>{{ lens.manufacturer }}</th>
+          <th>{{ lens.retail_price }}</th>
+          <th>{{ lens.num_in_stock }}</th>
+          <th>{{ lens.img }}</th>
+        </tr> 
+        {% endfor %} 
+      </tbody>     
+    </table>
+  </body>
+</html>

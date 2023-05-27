@@ -13,10 +13,20 @@
     cursor: pointer;
 }
 
+.home-item-image-container {
+    margin-top: 10px;
+    height: 100px;
+    padding-bottom: 20px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
 .home-item-img {
     padding: 10px;
     margin-top: 10px; 
-    width: 100px;
+    max-width: 75px;
+    max-height: 75px;
     height: auto;
 }
 
