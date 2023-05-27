@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>accessory_list</title>
+  </head>
+
+  <body>
+    {% load static %}
+    <table style="font-size: 10px;">
+      <!-- table header -->
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>model_name</th>
+          <th>model_number</th>
+          <th>manufacturer</th>
+          <th>retail_price</th>
+          <th>num_in_stock</th>
+          <th>img</th>
+        </tr>
+      </thead>
+      <!-- table data -->
+      <tbody>
+        {% for accessory in accessories %}   
+        <tr>
+          <th>{{ accessory.id }}</th>
+          <th>{{ accessory.model_name }}</th>
+          <th>{{ accessory.model_number }}</th>
+          <th>{{ accessory.manufacturer }}</th>
+          <th>{{ accessory.retail_price }}</th>
+          <th>{{ accessory.num_in_stock }}</th>
+          <th>{{ accessory.img }}</th>
+        </tr> 
+        {% endfor %} 
+      </tbody>     
+    </table>
+  </body>
+</html>

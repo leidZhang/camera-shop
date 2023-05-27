@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'camera.apps.CameraConfig',
+    'lens.apps.LensConfig',
+    'accessory.apps.AccessoryConfig',
     'corsheaders',
 ]
 

@@ -10,7 +10,9 @@ const ProductItem = (props) => {
 
   return (
     <div className="home-item-content" onClick={ handleClick }>
-      <img className="home-item-img" src={props.image} alt="image" />
+      <div className="home-item-image-container">
+        <img className="home-item-img" src={props.image} alt="image" />
+      </div>
       <div className="home-item-title">{props.title}</div>
       <div className="home-item-price">${props.price}</div>
     </div>    

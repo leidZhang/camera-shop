@@ -19,4 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('camera/', include('camera.urls')), 
+    path('lens/', include('lens.urls')),
+    path('accessory/', include('accessory.urls')),
 ]
