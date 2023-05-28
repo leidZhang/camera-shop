@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>camera_detail</title>
+  </head>
+
+  <body>
+    <table style="font-size: 10px;">
+        <!-- table header -->
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>model_name</th>
+            <th>model_number</th>
+            <th>manufacturer</th>
+            <th>retail_price</th>
+            <th>num_in_stock</th>
+            <th>release_date</th>
+            <th>img</th>
+          </tr>
+        </thead>
+        <!-- table data -->
+        <tbody>
+          <tr>
+            <th>{{ camera.id }}</th>
+            <th>{{ camera.model_name }}</th>
+            <th>{{ camera.model_number }}</th>
+            <th>{{ camera.manufacturer }}</th>
+            <th>{{ camera.retail_price }}</th>
+            <th>{{ camera.num_in_stock }}</th>
+            <th>{{ camera.release_date }}</th>
+            <th>{{ camera.img }}</th>
+          </tr> 
+        </tbody>     
+      </table>
+  </body>
+</html>
