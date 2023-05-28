@@ -7,12 +7,11 @@ const NavBar = () => {
     <nav className='navbar'>
       <div className='navbar-container'>
         <div className='titles'>
-          eCommerce Shop
+          <Link className='link' to="/">eCommerce Shop</Link>
         </div>
 
         <div className='links'>
-          <Link className='link' to="/">Home</Link>
-          <Link className='link' to="/products">Products</Link>
+          <Link className='link' to="/login">Login</Link>
           <Link className='link' to="/cart">Cart</Link>
         </div>
       </div>

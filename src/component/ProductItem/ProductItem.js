@@ -5,7 +5,7 @@ const ProductItem = (props) => {
   const navigate = useNavigate();
 
   function handleClick() {
-    navigate(`/another-page/${props.section}/${props.id}`);
+    navigate(`/${props.section}/${props.id}`);
   }
 
   return (

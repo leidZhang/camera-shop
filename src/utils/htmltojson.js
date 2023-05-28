@@ -1,10 +1,8 @@
 export const htmlToJson = (html) => {
-    console.log(html); // string 
-
     let parser = new DOMParser; 
     let doc = parser.parseFromString(html, "text/html");  
     let table = doc.getElementsByTagName("table")[0]; 
-    console.log(table)
+
     let data = []; 
     for (let i=1; i<table.rows.length; i++) {
         let row = {}; 
