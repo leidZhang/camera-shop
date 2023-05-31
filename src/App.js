@@ -16,7 +16,7 @@ function App() {
           <div className="content-container">
             <Routes>
               <Route exact path="/" element={<Home />} />
-              <Route path="/:productType/:id" element={<ProductDetail />}/>
+              <Route path="/:productType/:id" element={<ProductDetail />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/login" element={<Login />} />
               <Route path="*" element={<NotFound />} />                

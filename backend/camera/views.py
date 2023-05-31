@@ -8,5 +8,4 @@ def camera_list(request):
 
 def camera_detail(request, id): 
     camera = get_object_or_404(Camera, id=id)
-    print(camera)
     return render(request, "camera/camera_detail.html", {"camera": camera})
