@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'camera.apps.CameraConfig',
     'lens.apps.LensConfig',
     'accessory.apps.AccessoryConfig',
+    'cart.apps.CartConfig',
+    'product.apps.ProductConfig',
     'corsheaders',
 ]
 

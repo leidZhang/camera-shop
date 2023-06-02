@@ -3,11 +3,13 @@ import React, { useState } from "react";
 
 const CartItem = () => {
   const [isNotSelected, setIsNotSelected] = useState(true);
+  const options = ["1","2","3","4","5","6","7","8","9","10+"]; 
 
   const handleQtyChange = (option) => {
-    const qty = option.target.value;
-    console.log(qty); 
-    if (qty === "10+") {
+    const val = option.target.value;
+    console.log(val); 
+
+    if (val === "10+") {
       setIsNotSelected(false); 
     }
   }
@@ -24,23 +26,18 @@ const CartItem = () => {
       </div>
       <div className="cart-item-info-container">
         <div className='cart-item-title'>EOS Rebel T7 DSLR</div>
-        <div className='cart-unit-price'>$0</div>
+        <div className='cart-unit-price'>$10</div>
         <div className='cart-item-qty'>
           {isNotSelected ? (
             <select
               onChange={handleQtyChange}
               className='cart-item-qty-selector'
             >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10+">10+</option>
+              {options.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
             </select> 
           ) : (
             <input type="text" className='cart-item-qty-input' />
