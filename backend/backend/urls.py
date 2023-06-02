@@ -21,4 +21,6 @@ urlpatterns = [
     path('camera/', include('camera.urls')), 
     path('lens/', include('lens.urls')),
     path('accessory/', include('accessory.urls')),
+    path('cart/', include('cart.urls')),
+    path('product/', include('product.urls'))
 ]
