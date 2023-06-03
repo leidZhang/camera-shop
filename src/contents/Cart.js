@@ -8,7 +8,11 @@ const Cart = () => {
   const [totalPrice, setTotalPrice] = useState(0.00); 
 
   useEffect(() => {
-    axios.get('http://localhost:8000/cart/1').then(res => { // temporarily using user 1
+    fetchData(); 
+  }, []); 
+
+  const fetchData = () => {
+    axios.get('http://localhost:8000/cart/user=1').then(res => { // temporarily using user 1
       const html = res.data; 
       let json = htmlToJson(html); 
 
@@ -32,7 +36,16 @@ const Cart = () => {
     }).catch(err => {
       console.log(err); 
     })
-  }, []); 
+  }
+
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:8000/cart/delete/user=1&id=${id}`).then(res => {
+      console.log("deletion successful"); 
+      setCartList(cartList.filter((item) => item.id !== id));
+    }).catch(err => {
+      console.log(err); 
+    })
+  }
 
   return (
     <div className="cart-content">
@@ -41,11 +54,9 @@ const Cart = () => {
       <div className="cartlist-containter">
         {cartList.map(cartItem => (
           <CartItem 
-            id={cartItem.id} 
-            title={cartItem.title} 
-            price={cartItem.price} 
-            image={cartItem.image}
-            number={cartItem.number}
+            key={cartItem.id} 
+            item={cartItem}
+            onDelete={() => handleDelete(cartItem.id)}
           />
         ))}
       </div>

@@ -31,6 +31,7 @@ const ProductDetail = () => {
 
   function handleAddToCart() {
     console.log("Click me!")
+    // impl add to cart
   }
 
   return (

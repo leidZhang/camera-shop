@@ -11,7 +11,7 @@
  Target Server Version : 80030 (8.0.30)
  File Encoding         : 65001
 
- Date: 02/06/2023 12:38:41
+ Date: 03/06/2023 02:59:41
 */
 
 SET NAMES utf8mb4;
@@ -87,9 +87,9 @@ CREATE TABLE `cart`  (
 -- ----------------------------
 -- Records of cart
 -- ----------------------------
-INSERT INTO `cart` VALUES (1, 1, 1, 1);
-INSERT INTO `cart` VALUES (2, 1, 2, 2);
-INSERT INTO `cart` VALUES (3, 1, 3, 1);
+INSERT INTO `cart` VALUES (1, 1, 3, 1);
+INSERT INTO `cart` VALUES (2, 1, 7, 1);
+INSERT INTO `cart` VALUES (3, 1, 4, 2);
 
 -- ----------------------------
 -- Table structure for django_migrations

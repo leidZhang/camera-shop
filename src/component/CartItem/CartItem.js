@@ -1,9 +1,10 @@
+import axios from 'axios';
 import './CartItem.css'; 
 import React, { useState } from "react";
 
-const CartItem = (props) => {
+const CartItem = ({item, onDelete}) => {
   const [isNotSelected, setIsNotSelected] = useState(true);
-  const [number, setNumber] = useState(props.number); 
+  const [number, setNumber] = useState(item.number); 
   const options = ["1","2","3","4","5","6","7","8","9","10+"]; 
 
   const handleQtyChange = (option) => {
@@ -16,19 +17,18 @@ const CartItem = (props) => {
   }
 
   const handleDelete = () => {
-    alert("under development");
-    // impl delete
+    onDelete(); 
   }
 
   return (
     <div className="cart-item-container">
       <div className="cart-item-image-container">
-        <img className="cart-item-img" src={props.image} alt="image" />
+        <img className="cart-item-img" src={item.image} alt="image" />
       </div>
 
       <div className="cart-item-info-container">
-        <div className='cart-item-title'>{props.title}</div>
-        <div className='cart-unit-price'>${props.price}</div>
+        <div className='cart-item-title'>{item.title}</div>
+        <div className='cart-unit-price'>${item.price}</div>
         <div className='cart-item-qty'>
           {isNotSelected ? (
             <select
