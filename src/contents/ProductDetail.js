@@ -29,9 +29,18 @@ const ProductDetail = () => {
     });
   }, []); 
 
-  function handleAddToCart() {
-    console.log("Click me!")
-    // impl add to cart
+  const handleAddToCart = async (u_id, p_id, p_num) => {
+    try {
+      const res = await axios.post('http://localhost:8000/cart/post', {
+        user_id: u_id, 
+        prod_id: p_id, 
+        qty: p_num
+      }); 
+
+      console.log(res.data); 
+    } catch(err) {
+      console.error(err); 
+    }
   }
 
   return (
@@ -39,7 +48,7 @@ const ProductDetail = () => {
       <img src={product.image} alt={productType} />  
       name {product.title}
       price ${product.price}
-      <button className='add-to-cart-btn' onClick={handleAddToCart}>Add to Cart</button>
+      <button className='add-to-cart-btn' onClick={() => handleAddToCart(1, id, 1)}>Add to Cart</button>
     </div>
   )
 }
