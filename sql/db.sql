@@ -11,7 +11,7 @@
  Target Server Version : 80030 (8.0.30)
  File Encoding         : 65001
 
- Date: 03/06/2023 02:59:41
+ Date: 04/06/2023 03:18:13
 */
 
 SET NAMES utf8mb4;
@@ -73,23 +73,24 @@ INSERT INTO `camera` VALUES (10, '48MP Digital Camera ', NULL, 'Monitech', 149.9
 -- ----------------------------
 DROP TABLE IF EXISTS `cart`;
 CREATE TABLE `cart`  (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
   `prod_id` int NULL DEFAULT NULL,
   `prod_num` int NULL DEFAULT NULL,
-  PRIMARY KEY (`id`, `user_id`) USING BTREE,
+  PRIMARY KEY (`id`) USING BTREE,
   INDEX `cart_prod_id`(`prod_id` ASC) USING BTREE,
   INDEX `cart_user_id`(`user_id` ASC) USING BTREE,
-  CONSTRAINT `cart_prod_id` FOREIGN KEY (`prod_id`) REFERENCES `product` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `cart_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+  CONSTRAINT `cart_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `cart_prod_id` FOREIGN KEY (`prod_id`) REFERENCES `product` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of cart
 -- ----------------------------
-INSERT INTO `cart` VALUES (1, 1, 3, 1);
 INSERT INTO `cart` VALUES (2, 1, 7, 1);
-INSERT INTO `cart` VALUES (3, 1, 4, 2);
+INSERT INTO `cart` VALUES (4, 1, 8, 1);
+INSERT INTO `cart` VALUES (9, 1, 9, 2);
+INSERT INTO `cart` VALUES (10, 1, 6, 1);
 
 -- ----------------------------
 -- Table structure for django_migrations
@@ -137,12 +138,12 @@ INSERT INTO `lens` VALUES (15, 'Di III VC VXD Lens', NULL, 'Tamron', 1399, 6, 'h
 -- ----------------------------
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product`  (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `model_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `retail_price` decimal(10, 2) NULL DEFAULT NULL,
   `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of product
