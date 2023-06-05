@@ -5,5 +5,13 @@ This project is currently under development, originates from a lab assignment in
 - Cart and checkout: This module is responsible for processing the user's shopping cart content, settlement amount, payment method, shipping address, and other information, as well as completing the submission and confirmation of orders
 - Product Information Management: This module is responsible for storing and managing various data of products, such as names, prices, classifications, descriptions, images, inventory, ratings, etc., as well as providing search, filtering, sorting, and other functions for products 
 - Order Management: This module is responsible for tracking and processing the user's order status, such as pending payment, paid, shipped, received, etc., as well as providing functions such as viewing, modifying, canceling, returning, and exchanging orders 
+## Project Preview
+This project is still in progress, and the following are some completed pages
+### Home
+<img src="images/inprogress/homepage.png" />
+
+### Cart
+<img src="images/inprogress/cartpage.png" />
+
 ## License
 This project is licensed under the Apache-2.0 license - see the LICENSE file for details.

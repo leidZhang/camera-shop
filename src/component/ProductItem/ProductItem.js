@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const ProductItem = (props) => {
   const navigate = useNavigate();
 
-  function handleClick() {
+  const handleClick = () => {
     navigate(`/${props.section}/${props.id}`);
   }
 

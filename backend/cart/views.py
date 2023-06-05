@@ -2,7 +2,9 @@ import json
 from .models import Cart
 from .models import Product
 from django.db.models import F
+from django.db.models import Sum
 from django.http import HttpResponse
+from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, get_object_or_404, redirect
 
@@ -15,6 +17,14 @@ def cart_items_by_user_id(request, u_id):
     )
     
     return render(request, 'cart/cart_items.html', {'cart_items': cart_items})
+
+@csrf_exempt
+def total_price_by_user_id(request, u_id): 
+    total_price = Cart.objects.filter(user_id=u_id).values('id', 'user_id', 'prod_id', 'prod_num').annotate(
+        subtotal = F('prod_id__retail_price') * F('prod_num')
+    ).aggregate(total_price = Sum('subtotal'))['total_price']
+    print(total_price)
+    return JsonResponse({'total_price': total_price})
 
 @csrf_exempt
 def delete_by_id(request, user_id, row_id): 
