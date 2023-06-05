@@ -8,10 +8,10 @@ This project is currently under development, originates from a lab assignment in
 ## Project Preview
 This project is still in progress, and the following are some completed pages
 ### Home
-<img src="images/in_progress/homepage.png" />
+<img src="images/inprogress/homepage.png" />
 
 ### Cart
-<img src="images/in_progress/cartpage.png" />
+<img src="images/inprogress/cartpage.png" />
 
 ## License
 This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
