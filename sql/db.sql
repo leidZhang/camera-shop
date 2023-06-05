@@ -11,7 +11,7 @@
  Target Server Version : 80030 (8.0.30)
  File Encoding         : 65001
 
- Date: 04/06/2023 03:18:13
+ Date: 05/06/2023 00:50:27
 */
 
 SET NAMES utf8mb4;
@@ -78,10 +78,10 @@ CREATE TABLE `cart`  (
   `prod_id` int NULL DEFAULT NULL,
   `prod_num` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `cart_prod_id`(`prod_id` ASC) USING BTREE,
   INDEX `cart_user_id`(`user_id` ASC) USING BTREE,
-  CONSTRAINT `cart_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `cart_prod_id` FOREIGN KEY (`prod_id`) REFERENCES `product` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  INDEX `cart_prod_id`(`prod_id` ASC) USING BTREE,
+  CONSTRAINT `cart_prod_id` FOREIGN KEY (`prod_id`) REFERENCES `product` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `cart_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -143,7 +143,7 @@ CREATE TABLE `product`  (
   `retail_price` decimal(10, 2) NULL DEFAULT NULL,
   `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of product

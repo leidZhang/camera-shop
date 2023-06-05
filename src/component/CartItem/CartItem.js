@@ -2,7 +2,7 @@ import axios from 'axios';
 import './CartItem.css'; 
 import React, { useState } from "react";
 
-const CartItem = ({item, onDelete}) => {
+const CartItem = ({item, onDelete, onUpdate}) => {
   const [isNotSelected, setIsNotSelected] = useState(true);
   const [number, setNumber] = useState(item.number); 
   const options = ["1","2","3","4","5","6","7","8","9","10+"]; 
@@ -14,6 +14,7 @@ const CartItem = ({item, onDelete}) => {
   const handleQtyUpdate = (newNum) => {
     axios.patch(`http://localhost:8000/cart/update/user=1&id=${item.id}&qty=${newNum}`).then(res => {
       console.log("update success"); 
+      onUpdate(); 
     }).catch(err => {
       console.log(err); 
     })
@@ -58,7 +59,7 @@ const CartItem = ({item, onDelete}) => {
               >
                 {options.map((option) => (
                   <option key={option} value={option}>
-                  {option}
+                    {option}
                   </option>
                 ))}
               </select> 
