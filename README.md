@@ -8,6 +8,7 @@ This project is currently under development, originates from a lab assignment in
 ## Project Preview
 This project is still in progress, and the following are some completed pages.
 ### Home
+
 This is the homepage, displaying the latest product and discount information. 
 <img src="images/inprogress/homepage.png" />
 
