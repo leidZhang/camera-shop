@@ -22,5 +22,7 @@ urlpatterns = [
     path('lens/', include('lens.urls')),
     path('accessory/', include('accessory.urls')),
     path('cart/', include('cart.urls')),
-    path('product/', include('product.urls'))
+    path('product/', include('product.urls')),
+    path('user/', include('user.urls')),
+    path('address/', include('address.urls'))
 ]

@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'accessory.apps.AccessoryConfig',
     'cart.apps.CartConfig',
     'product.apps.ProductConfig',
+    'user.apps.UserConfig',
+    'address.apps.AddressConfig',
     'corsheaders',
 ]
 

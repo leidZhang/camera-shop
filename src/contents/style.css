@@ -44,3 +44,17 @@
     border: rgb(230, 127, 23);
     cursor: pointer;
 }
+
+.checkout-form-container {
+    background-color: white;
+    margin-left: 15%;
+    margin-right: 30%;
+}
+
+.checkout-form-title {
+    text-align: center;
+    font-size: 35px;
+    padding-left: 20px; 
+    padding-top: 10px; 
+    margin-bottom: 10px;
+}

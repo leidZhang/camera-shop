@@ -7,6 +7,7 @@ import NotFound from './contents/NotFound';
 import ProductDetail from './contents/ProductDetail';
 import Cart from './contents/Cart';
 import Login from './contents/Login';
+import Checkout from './contents/Checkout';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route path="/:productType/:id" element={<ProductDetail />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
               <Route path="/login" element={<Login />} />
               <Route path="*" element={<NotFound />} />                
             </Routes>

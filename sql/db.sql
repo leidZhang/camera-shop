@@ -11,7 +11,7 @@
  Target Server Version : 80030 (8.0.30)
  File Encoding         : 65001
 
- Date: 05/06/2023 00:50:27
+ Date: 07/06/2023 16:25:18
 */
 
 SET NAMES utf8mb4;
@@ -41,6 +41,30 @@ INSERT INTO `accessory` VALUES (2, '67 Inch Heavy Duty Tripod', NULL, 'Eicanus',
 INSERT INTO `accessory` VALUES (3, 'Leather Camera Backpack Bag', NULL, 'Endurax', 69.99, 5, 'https://m.media-amazon.com/images/I/718b9HptW0L._AC_SX466_.jpg');
 INSERT INTO `accessory` VALUES (4, 'Camera Lens Rain Cover', NULL, 'Kiorafoto', 7.99, 228, 'https://m.media-amazon.com/images/I/71l0y6xt1vS._AC_SX679_.jpg');
 INSERT INTO `accessory` VALUES (5, 'VL100C Bi-Color LED Video Light', NULL, 'VIJIM', 19.95, 10, 'https://m.media-amazon.com/images/I/61GgRmStCfL._AC_SX466_.jpg');
+
+-- ----------------------------
+-- Table structure for address
+-- ----------------------------
+DROP TABLE IF EXISTS `address`;
+CREATE TABLE `address`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NULL DEFAULT NULL,
+  `address1` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `address2` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `city` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `province` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `country` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `zip_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `user_address`(`user_id` ASC) USING BTREE,
+  CONSTRAINT `user_address` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of address
+-- ----------------------------
+INSERT INTO `address` VALUES (1, 1, '123 XXX Street', NULL, 'Toronto', 'ON', 'Canada', 'MXC XGX');
+INSERT INTO `address` VALUES (2, 1, '456 AAA Dr', NULL, 'Toronto', 'ON', 'Canada', 'MXM XCX');
 
 -- ----------------------------
 -- Table structure for camera
@@ -171,12 +195,15 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`  (
   `id` int NOT NULL,
   `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `first_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `last_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'test_user');
+INSERT INTO `user` VALUES (1, 'test_user', 'John', 'Smith');
+INSERT INTO `user` VALUES (2, 'test_user2', 'Jane', 'Doe');
 
 SET FOREIGN_KEY_CHECKS = 1;
