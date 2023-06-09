@@ -45,10 +45,23 @@
     cursor: pointer;
 }
 
-.checkout-form-container {
+.checkout-container {
+    overflow: auto;
+}
+
+.checkout-form-main {
+    float: left;
     background-color: white;
+    padding-bottom: 50px;
     margin-left: 15%;
-    margin-right: 30%;
+    width: 55%;
+}
+
+.checkout-side-form-container {
+    display: flex; 
+    padding-left: 2px;
+    width: 15%;
+    margin-left: 2px;
 }
 
 .checkout-form-title {
@@ -58,3 +71,5 @@
     padding-top: 10px; 
     margin-bottom: 10px;
 }
+
+
