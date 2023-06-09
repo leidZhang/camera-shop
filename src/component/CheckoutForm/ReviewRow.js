@@ -56,7 +56,16 @@ const ReviewRow = () => {
   return (
     <div className="row-container">
       <div className="row-title">Review Items</div>
-      <div className='row-info'>Loading...</div>
+      <div className='row-info' id='review-item-list'>
+        {cartList.map(cartItem => (
+          <ReviewItem 
+            key={cartItem.id} 
+            item={cartItem}
+            onUpdate={fetchTotalPrice}
+            onDelete={() => handleDelete(cartItem.id)}
+          />
+        ))}
+      </div>
     </div>
   )
 }
