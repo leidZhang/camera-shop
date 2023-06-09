@@ -11,7 +11,7 @@
  Target Server Version : 80030 (8.0.30)
  File Encoding         : 65001
 
- Date: 07/06/2023 16:25:18
+ Date: 08/06/2023 23:09:02
 */
 
 SET NAMES utf8mb4;
@@ -55,6 +55,8 @@ CREATE TABLE `address`  (
   `province` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `country` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `zip_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `first_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `last_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `user_address`(`user_id` ASC) USING BTREE,
   CONSTRAINT `user_address` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -63,8 +65,8 @@ CREATE TABLE `address`  (
 -- ----------------------------
 -- Records of address
 -- ----------------------------
-INSERT INTO `address` VALUES (1, 1, '123 XXX Street', NULL, 'Toronto', 'ON', 'Canada', 'MXC XGX');
-INSERT INTO `address` VALUES (2, 1, '456 AAA Dr', NULL, 'Toronto', 'ON', 'Canada', 'MXM XCX');
+INSERT INTO `address` VALUES (1, 1, '123 XXX Street', NULL, 'Toronto', 'ON', 'Canada', 'MXC XGX', 'John', 'Smith');
+INSERT INTO `address` VALUES (2, 1, '456 AAA Dr', NULL, 'Toronto', 'ON', 'Canada', 'MXM XCX', 'Tim', 'Smith');
 
 -- ----------------------------
 -- Table structure for camera
@@ -156,6 +158,29 @@ INSERT INTO `lens` VALUES (12, 'USM Super-Telephoto Lens', NULL, 'Canon', 2899, 
 INSERT INTO `lens` VALUES (13, 'RF 85mm F1.2 L USM Lens', NULL, 'Canon', 2799, 2, 'https://m.media-amazon.com/images/I/612WNSfff9L._AC_SX466_.jpg');
 INSERT INTO `lens` VALUES (14, 'Milvus Full Frame Camera Lens', NULL, 'ZEISS', 1274, 3, 'https://m.media-amazon.com/images/I/61DcU2Z9tDL._AC_SX466_.jpg');
 INSERT INTO `lens` VALUES (15, 'Di III VC VXD Lens', NULL, 'Tamron', 1399, 6, 'https://m.media-amazon.com/images/I/61al59-ZpZS._AC_SX466_.jpg');
+
+-- ----------------------------
+-- Table structure for payment_card
+-- ----------------------------
+DROP TABLE IF EXISTS `payment_card`;
+CREATE TABLE `payment_card`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NULL DEFAULT NULL,
+  `card_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `card_number` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `valid_date` date NULL DEFAULT NULL,
+  `cvv` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `card_user`(`user_id` ASC) USING BTREE,
+  CONSTRAINT `card_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of payment_card
+-- ----------------------------
+INSERT INTO `payment_card` VALUES (1, 1, 'credit', '123456789ABCDEFG', '2029-07-13', '123');
+INSERT INTO `payment_card` VALUES (2, 1, 'debit', 'ABCDEFGH12345678', '2029-07-13', '456');
+INSERT INTO `payment_card` VALUES (3, 2, 'credit', '753289512ERFGSDCF', '2027-06-16', '753');
 
 -- ----------------------------
 -- Table structure for product

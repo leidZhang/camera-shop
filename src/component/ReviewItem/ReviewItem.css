@@ -1,71 +1,71 @@
-.cart-item-container {
+.review-item-container {
     height: 150px;
     border-top: 2px solid gainsboro;
     margin-left: 20px;
     margin-right: 20px;
 }
 
-.cart-item-image-container {
+.review-item-image-container {
     float: left;
     margin-left: 30px; 
-    height: 150px;
+    height: 100px;
     display: flex;
     align-items: center;
 }
 
-.cart-item-img {
+.review-item-img {
     padding: 10px;
     margin-top: 10px; 
-    max-width: 120px;
-    max-height: 120px;
+    max-width: 70px;
+    max-height: 70px;
     height: auto;
 }
 
-.cart-item-info-container {
+.review-item-info-container {
     padding: 10px;
 }
 
-.cart-item-title {
+.review-item-title {
     text-align: left;
     padding-left: 200px; 
     font-size: 20px;
     margin-bottom: 10px;
 }
 
-.cart-unit-price {
+.review-unit-price {
     text-align: left;
     padding-left: 200px; 
     font-size: 20px;
     margin-bottom: 10px;
 }
 
-.cart-item-qty {
+.review-item-qty {
     float: left;
     padding-left: 200px; 
     position: absolute;
 }
 
-.cart-item-qty-selector {
+.review-item-qty-selector {
     height: 25px;
     width: 45px;
     font-size: 15px;
 }
 
-.cart-item-qty-input {
+.review-item-qty-input {
     width: 40px;
 }
 
-.cart-item-delete {
+.review-item-delete {
     text-align: left;
     margin-top: 10px;
     color:cornflowerblue; 
 }
 
-.cart-item-delete:hover {
+.review-item-delete:hover {
     cursor: pointer;
     text-decoration: underline;
 }
 
-.cart-item-qty-update {
+.review-item-qty-update {
     margin-left: 5px;
 }

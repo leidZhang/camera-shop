@@ -1,8 +1,8 @@
 import axios from 'axios';
-import './CartItem.css'; 
+import './ReviewItem.css'; 
 import React, { useState } from "react";
 
-const CartItem = ({item, onDelete, onUpdate}) => {
+const ReviewItem = ({item, onDelete, onUpdate}) => {
   const [isNotSelected, setIsNotSelected] = useState(true);
   const [number, setNumber] = useState(item.number); 
   const options = ["1","2","3","4","5","6","7","8","9","10+"]; 
@@ -42,21 +42,21 @@ const CartItem = ({item, onDelete, onUpdate}) => {
   }
 
   return (
-    <div className="cart-item-container">
-      <div className="cart-item-image-container">
-        <img className="cart-item-img" src={item.image} alt="image" />
+    <div className="review-item-container">
+      <div className="review-item-image-container">
+        <img className="review-item-img" src={item.image} alt="image" />
       </div>
 
-      <div className="cart-item-info-container">
-        <div className='cart-item-title'>{item.title}</div>
-        <div className='cart-unit-price'>${item.price}</div>
-        <div className='cart-item-qty'>
+      <div className="review-item-info-container">
+        <div className='review-item-title'>{item.title}</div>
+        <div className='review-unit-price'>${item.price}</div>
+        <div className='review-item-qty'>
           {(isNotSelected && item.number < 10) ? (
-            <div className='cart-item-qty1'>
+            <div className='review-item-qty1'>
               <select
                 value={options[number-1]}
                 onChange={handleQtyChange}
-                className='cart-item-qty-selector'
+                className='review-item-qty-selector'
               >
                 {options.map((option) => (
                   <option key={option} value={option}>
@@ -66,21 +66,21 @@ const CartItem = ({item, onDelete, onUpdate}) => {
               </select> 
             </div>
           ) : (
-            <div className='cart-item-qty2'>
+            <div className='review-item-qty2'>
               <input 
                 type="text" 
-                className='cart-item-qty-input' 
+                className='review-item-qty-input' 
                 value={number}
                 onChange={handleQtyInput}
               />
-              <button className='cart-item-qty-update' onClick={() => handleQtyClick(number)}>Update</button>
+              <button className='review-item-qty-update' onClick={() => handleQtyClick(number)}>Update</button>
             </div>
           )} 
-          <div className='cart-item-delete' onClick={handleDelete}>Delete</div>
+          <div className='review-item-delete' onClick={handleDelete}>Delete</div>
         </div>
       </div>
     </div>
   )
 }
 
-export default CartItem; 
+export default ReviewItem; 
