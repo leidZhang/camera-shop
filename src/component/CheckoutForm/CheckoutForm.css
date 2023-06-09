@@ -19,3 +19,12 @@
     text-align: left;
     padding-left: 300px;
 }
+
+.checkout-change {
+    color:cornflowerblue; 
+}
+
+.checkout-change:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

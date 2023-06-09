@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'product.apps.ProductConfig',
     'user.apps.UserConfig',
     'address.apps.AddressConfig',
+    'card.apps.CardConfig',
     'corsheaders',
 ]
 

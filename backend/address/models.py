@@ -13,3 +13,5 @@ class Address(models.Model):
     province = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
     zip_code = models.CharField(max_length=255)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
