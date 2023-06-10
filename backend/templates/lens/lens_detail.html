@@ -10,23 +10,23 @@
           <tr>
             <th>id</th>
             <th>model_name</th>
-            <th>model_number</th>
             <th>manufacturer</th>
             <th>retail_price</th>
             <th>num_in_stock</th>
-            <th>img</th>
+            <th>description</th>
+            <th>image</th>
           </tr>
         </thead>
         <!-- table data -->
         <tbody>
           <tr>
-            <th>{{ lens.id }}</th>
-            <th>{{ lens.model_name }}</th>
-            <th>{{ lens.model_number }}</th>
-            <th>{{ lens.manufacturer }}</th>
-            <th>{{ lens.retail_price }}</th>
-            <th>{{ lens.num_in_stock }}</th>
-            <th>{{ lens.img }}</th>
+            <th>{{ lens.id.id }}</th>
+            <th>{{ lens.id.model_name }}</th>
+            <th>{{ lens.id.manufacturer }}</th>
+            <th>{{ lens.id.retail_price }}</th>
+            <th>{{ lens.id.num_in_stock }}</th>
+            <th>{{ lens.id.description }}</th>
+            <th>{{ lens.id.image }}</th>
           </tr> 
         </tbody>     
       </table>

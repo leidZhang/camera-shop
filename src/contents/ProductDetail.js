@@ -9,7 +9,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useState([]); 
   
   useEffect(() => {
-    axios.get(`http://localhost:8000/${productType}/${id}`).then(res => {
+    axios.get(`http://localhost:8000/${productType}/id=${id}`).then(res => {
       const html = res.data; 
       let json = htmlToJson(html); 
      
@@ -19,7 +19,7 @@ const ProductDetail = () => {
           id: item.id, 
           title: item.model_name, 
           price: item.retail_price, 
-          image: item.img
+          image: item.image
         }
       }); 
 

@@ -11,8 +11,11 @@
         <tr>
           <th>id</th>
           <th>model_name</th>
+          <th>retail_price</th>
           <th>manufacturer</th>
           <th>image</th>
+          <th>description</th>
+          <th>num_in_stock</th>
         </tr>
       </thead>
       <!-- table data -->
@@ -22,7 +25,10 @@
           <th>{{ product.id }}</th>
           <th>{{ product.model_name }}</th>
           <th>{{ product.retail_price }}</th>
+          <th>{{ product.manufacturer }}</th>
           <th>{{ product.image }}</th>
+          <th>{{ product.description }}</th>
+          <th>{{ product.num_in_stock }}</th>
         </tr> 
         {% endfor %} 
       </tbody>     

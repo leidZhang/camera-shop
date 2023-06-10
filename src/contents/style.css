@@ -72,4 +72,8 @@
     margin-bottom: 10px;
 }
 
-
+.product-detail-container {
+    background-color: white;
+    height: 80vh;
+    margin-bottom: 2px;
+}

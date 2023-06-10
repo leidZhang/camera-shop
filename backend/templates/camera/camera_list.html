@@ -11,26 +11,26 @@
         <tr>
           <th>id</th>
           <th>model_name</th>
-          <th>model_number</th>
           <th>manufacturer</th>
           <th>retail_price</th>
           <th>num_in_stock</th>
+          <th>description</th>
           <th>release_date</th>
-          <th>img</th>
+          <th>image</th>
         </tr>
       </thead>
       <!-- table data -->
       <tbody>
         {% for camera in cameras %}   
         <tr>
-          <th>{{ camera.id }}</th>
-          <th>{{ camera.model_name }}</th>
-          <th>{{ camera.model_number }}</th>
-          <th>{{ camera.manufacturer }}</th>
-          <th>{{ camera.retail_price }}</th>
-          <th>{{ camera.num_in_stock }}</th>
+          <th>{{ camera.id.id }}</th>
+          <th>{{ camera.id.model_name }}</th>
+          <th>{{ camera.id.manufacturer }}</th>id
+          <th>{{ camera.id.retail_price }}</th>
+          <th>{{ camera.id.num_in_stock }}</th>
+          <th>{{ camera.id.description }}</th>
           <th>{{ camera.release_date }}</th>
-          <th>{{ camera.img }}</th>
+          <th>{{ camera.id.image }}</th>
         </tr> 
         {% endfor %} 
       </tbody>     
