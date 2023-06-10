@@ -15,5 +15,9 @@ This is the homepage, displaying the latest product and discount information.
 This is the shopping cart page where users can view and modify their order. This page also has a dynamic update function, which means that when users modify the number of items or delete items, the total price on the page will immediately change, making it easier for users to control their consumption.
 <img src="images/inprogress/cartpage.png" />
 
+### Checkout Page
+This is the checkout page, users can choose their payment method, their address, and make final decision before placing the order.
+<img src="images/inprogress/checkout.png" />
+
 ## License
 This project is licensed under the Apache-2.0 license - see the LICENSE file for details.

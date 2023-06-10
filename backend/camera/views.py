@@ -4,6 +4,7 @@ from .models import Camera
 # Create your views here.
 def camera_list(request): 
     cameras = Camera.objects.all()
+    print(cameras)
     return render(request, "camera/camera_list.html", {"cameras": cameras})
 
 def camera_detail(request, item_id): 

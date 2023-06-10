@@ -25,7 +25,7 @@ const ProductBar = (props) => {
           id: item.id, 
           title: item.model_name, 
           price: item.retail_price, 
-          image: item.img
+          image: item.image
         }
       }); 
       

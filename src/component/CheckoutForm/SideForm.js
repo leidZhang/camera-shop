@@ -65,7 +65,6 @@ const SideForm = () => {
         <div className="preorder-price"> ${finalPrice}</div>
         <button id="checkout-button" onClick={handlePlaceOrder}>Place Order</button>
       </div>
-      
     </div>
   )
 }

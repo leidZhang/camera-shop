@@ -3,5 +3,5 @@ from .import views
 
 urlpatterns = [
     path("", views.product_list, name="product_list"), 
-    path("<int:item_id>", views.product_detail, name="product_detail")
+    path("id=<int:item_id>", views.product_detail, name="product_detail")
 ]
