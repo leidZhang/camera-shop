@@ -1,4 +1,5 @@
 import json
+from .models import User
 from .models import Cart
 from .models import Product
 from django.db.models import F
@@ -35,7 +36,8 @@ def delete_by_id(request, user_id, row_id):
 
 @csrf_exempt
 def update_by_id(request, uid, row_id, qty):
-    cart_item = get_object_or_404(Cart, user_id=uid, id=row_id) 
+    user = get_object_or_404(User, id=uid)
+    cart_item = get_object_or_404(Cart, user_id=user, id=row_id) 
     cart_item.prod_num = qty 
     cart_item.save()
 
@@ -50,12 +52,13 @@ def post_by_user_id(request):
     product = get_object_or_404(Product, id=pid)
 
     try:
-        item = Cart.objects.get(user_id=uid, prod_id=product)
+        user = get_object_or_404(User, id=uid)
+        item = Cart.objects.get(user_id=user, prod_id=product)
         return HttpResponse('Product found!')
     except Cart.DoesNotExist:
         pass
 
-    cart_item = Cart(user_id=uid, prod_id=product, prod_num=qty)
+    cart_item = Cart(user_id=user, prod_id=product, prod_num=qty)
     print(cart_item)
     cart_item.save()
 
