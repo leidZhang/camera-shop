@@ -53,6 +53,7 @@ const Cart = () => {
     axios.delete(`http://localhost:8000/cart/delete/user=1&id=${id}`).then(res => {
       console.log("deletion successful"); 
       setCartList(cartList.filter((item) => item.id !== id));
+      fetchTotalPrice(); 
     }).catch(err => {
       console.log(err); 
     })

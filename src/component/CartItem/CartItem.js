@@ -9,7 +9,6 @@ const CartItem = ({item, onDelete, onUpdate}) => {
 
   const handleDelete = () => {
     onDelete(); 
-    onUpdate(); 
   }
 
   const handleQtyUpdate = (newNum) => {
